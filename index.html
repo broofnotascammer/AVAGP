@@ -1,76 +1,103 @@
 <!DOCTYPE html>
+<!-- AMATEAR VERSION - WARNING: hacked together, messy, lots of bad practices -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Project - Landing Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone Project - Landing Page (AMATEAR)</title>
 
-        body {
-            background: linear-gradient(to right, blue, grey, white);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
+<style>
+/* I'm using everything at once because why not? */
+body {
+  background-color: #89a; /* fallback for old browsers */
+  background: linear-gradient(to right, blue, grey, white);
+  margin:0;
+  padding:0;
+  font-family: 'Times New Roman', serif;
+  min-height: 100vh; /* make sure gradient fills the viewport */
+}
+.container { width: 80%; margin: 50px auto; background: rgba(255,255,255,0.2); padding:20px; border-radius:999px; }
+/* duplicate rules on purpose */
+h1 { color: white; font-size: 48px; text-shadow: 3px 3px 0 #000; }
+h1 { font-weight: 700; letter-spacing: 1px; }
+p { color: white; font-size: 18px; }
+/* link gradient — specify direction or let it default top->bottom */
+a { background: linear-gradient(to bottom, #4A90E2, #9B9B9B); color:#fff; padding:10px 20px; text-decoration:none; border-radius:4px; display:inline-block; box-shadow: 2px 2px 0 rgba(0,0,0,0.2); }
+/* useless class */
+.btn { padding: 999px; }
+</style>
 
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        p {
-            color: white;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        a {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #FF6B6B;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        a:hover {
-            background: #FF5252;
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        a:active {
-            transform: scale(0.98);
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Check Out My Phone Project</h1>
-        <p>Click below to view my Canva design</p>
-        <a href="https://canva.link/t39a8lzf8l443d2">View Project</a>
-    </div>
+
+<!-- User image inserted near the top as requested. Add the file images/classroom.jpg to the repo so this loads locally. -->
+<img src="images/classroom.jpg" alt="Classroom with student using a phone" style="display:block; max-width:90%; width:600px; margin:20px auto; border-radius:8px; border:4px solid rgba(255,255,255,0.15);" />
+
+<!-- TODO: make this responsive later. maybe. -->
+<center> <!-- old school centering -->
+  <table border="1" cellpadding="10" cellspacing="0" style="background:transparent; border-color:transparent;">
+    <tr>
+      <td>
+
+        <!-- random comment: this is how pros do it -->
+        <div class="container" style="border: 5px dashed rgba(255,255,255,0.1); padding:40px;">
+
+          <!-- mixing tags and fonts -->
+          <h1 style="font-size:3.5em; margin-bottom:10px;">
+            <font face="Comic Sans MS, Arial" color="white">Check Out My Phone Project!!!</font>
+          </h1>
+
+          <p style="font-size:20px; color:#fff; text-shadow:2px 2px 4px #000;">
+            Click below to view my Canva design. <b>It's lit 🔥</b>
+          </p>
+
+          <br><br>
+
+          <!-- link with inline JS and bad accessibility -->
+          <a href="https://canva.link/t39a8lzf8l443d2"
+             onclick="alert('Opening my amazing design!'); window.open(this.href); return false;"
+             style="font-size:20px; background:#FF5252; padding:15px 40px; border:3px solid #fff;">
+            View Project (click me)
+          </a>
+
+          <br><br>
+
+          <!-- silly animated text (deprecated) -->
+          <marquee behavior="alternate" style="color:yellow; font-weight:bold;">
+            BEST PHONE DESIGN EVER!!! (not really but maybe)
+          </marquee>
+
+          <br>
+
+          <!-- pointless big emoji img (no alt) -->
+          <img src="https://via.placeholder.com/150" style="width:150px; height:150px; border-radius:50%;" />
+
+          <br><br>
+
+          <!-- extra bad practices: inline event on body-ish element -->
+          <div style="font-size:12px; color:#eee;">
+            <i>Made in 10 minutes. Please don't judge.</i>
+            <br>
+            <!-- misspelled and amateur comment -->
+            <!-- AMATEAR: fix later - add proper css and remove <center> and tables -->
+          </div>
+
+        </div>
+
+      </td>
+    </tr>
+  </table>
+</center>
+
+<!-- accidental script at bottom -->
+<script>
+// little helper that does nothing useful
+function iWishThisWasBetter() {
+  console.log("I should refactor this later");
+}
+// call it for no reason
+iWishThisWasBetter();
+</script>
+
 </body>
 </html>
